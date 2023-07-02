@@ -241,6 +241,7 @@
 
 .recent_locations--CONTAINER-CONTENT .recent_location--CARD .recent_location_card--HEADER h6,
 .recent_locations--CONTAINER-CONTENT .recent_location--CARD .recent_location_card--HEADER h5{
+    width: max-content;
     text-transform: capitalize;
     color:var(--main-white-color);
 }
