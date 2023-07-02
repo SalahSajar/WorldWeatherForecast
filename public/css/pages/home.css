@@ -1,0 +1,424 @@
+@import "/css/vars.css";
+/*---------- HOME HEADER STYLES SECTION ----------*/
+
+.homeHeader--BLOCK{
+    background-image: url("https://www.awxcdn.com/adc-assets/images/hero/6/1024x450.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 65vh;
+}
+
+@media only screen and (max-width: 550px) {
+    .homeHeader--BLOCK {
+        min-height: 50vh;
+    }
+}
+
+.homeHeader--CONTENT {
+    background: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0, 0, 0, 0) 33%);
+}
+
+@media only screen and (max-width: 450px) {
+    .homeHeader--CONTENT {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, .9), rgba(0, 0, 0, 0) 45%);
+    }
+}
+
+.homeHeader--CONTENT .simpleHeader_navbar--EL .simpleHeader_navbar--CONTENT{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 450px){
+    .homeHeader--CONTENT .simpleHeader_navbar--EL .simpleHeader_navbar--CONTENT{
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+.simpleHeader_navbar--EL .simpleHeader_navbar--CONTENT h1{
+    flex: 0 0 clamp(10rem, calc(2rem + 9vw), 20rem);
+}
+
+@media only screen and (max-width: 450px) {
+    .simpleHeader_navbar--EL .simpleHeader_navbar--CONTENT h1 {
+        flex: unset;
+    }
+}
+
+.simpleHeader_navbar--EL .simpleHeader_navbar--CONTENT h1 a{
+    display: block;
+    aspect-ratio: 16/7;
+    width: 100%;
+}
+
+@media only screen and (max-width: 450px) {
+    .simpleHeader_navbar--EL .simpleHeader_navbar--CONTENT h1 a{
+        aspect-ratio: 16/2;
+    }
+}
+
+.simpleHeader_navbar--CONTENT h1 a img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    filter: invert(1);
+}
+
+.simpleHeader_navbar--CONTENT .simpleHeader_navbar_links--LIST{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media only screen and (max-width: 450px) {
+    .simpleHeader_navbar--CONTENT .simpleHeader_navbar_links--LIST{
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+.simpleHeader_navbar--CONTENT .simpleHeader_navbar_links--LIST a{
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: .5rem 1rem;
+    transition: color .1s ease-in-out;
+    color:var(--main-white-color);
+}
+
+@media only screen and (max-width: 450px) {
+    .simpleHeader_navbar--CONTENT .simpleHeader_navbar_links--LIST a{
+        padding-inline: 0;
+    }
+}
+
+.simpleHeader_navbar--CONTENT .simpleHeader_navbar_links--LIST a:hover{
+    color:var(--main-light-color);
+}
+
+.homeHeader--BLOCK .homeHeader--CONTENT .weatherLocation_search__recentLocations--BLOCK{
+    padding-block: 7.5rem;
+}
+
+/*------------- Home Header locations search -------------*/
+    .weatherLocation_search__recentLocations--BLOCK .weather_location_search--BLOCK{
+        width: 70rem;
+        max-width: 100%;
+        background-color:var(--main-white-color);
+        border-radius: .5rem;
+    }
+
+    .weather_location_search--BLOCK .weather_location_search--CONTENT{
+        position:relative;
+        padding:clamp(.7rem, calc(0.1rem + 0.9vw), 1.7rem);
+        z-index: 1;
+    }
+    .weather_location_search--CONTENT .weather_location_search_input--BLOCK{
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+    }
+    .weather_location_search--CONTENT .weather_location_search_input--BLOCK .weather_location_search_input--ICON-WRAPPER{
+        flex: 0 0 3rem;
+        aspect-ratio: 1;
+    }
+    .weather_location_search--CONTENT .weather_location_search_input--BLOCK .weather_location_search_input--ICON-WRAPPER img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+    
+    .weather_location_search--CONTENT .weather_location_search_input--BLOCK .weather_location_search--INPUT{
+        flex: 0 1 100%;
+        border:none;
+        outline: none;
+        background: none;
+    }
+
+    .weather_location_search--CONTENT .weather_location_search_input--BLOCK .weather_location_search--INPUT::placeholder{
+        font-weight: 300;
+    }
+
+    .weather_location_search--BLOCK .weather_location_search--CONTENT .weather_locations_search--DROPDOWN-BLOCK{
+        position: absolute;
+        bottom: 0;
+        transform: translateY(100%);
+        right: 0;
+        left: 0;
+        background-color: #fff;
+        border-radius: .5rem;
+        box-shadow: 0 0 1rem -0.3rem rgb(0 0 0 / 50%);
+        visibility: hidden;
+    }
+
+    .weather_location_search--BLOCK .weather_location_search--CONTENT .weather_locations_search--DROPDOWN-BLOCK[data-visible="true"]{
+        visibility: visible;
+    }
+
+    .weather_location_search--CONTENT .weather_locations_search--DROPDOWN-BLOCK .weather_locations_search--RESULTS-LIST{
+        list-style: none;
+    }
+
+    .weather_locations_search--RESULTS-LIST .weather_locations_search--LIST-ITEM{
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+        padding: clamp(1.2rem, calc(0.5rem + 0.8vw), 1.9rem) 2.5rem;
+        color: var(--secondary-dark-color);
+        text-transform: capitalize;
+        transition: background .2s ease-in-out;
+    }
+    
+    .weather_locations_search--RESULTS-LIST .weather_locations_search--LIST-ITEM:hover{
+        color: var(--main-dark-color);
+        background-color: var(--main-light-color);
+    }
+
+    .weather_locations_search--RESULTS-LIST .weather_locations_search--LIST-ITEM .weather_locations_search_results--ITEM-ICON-CONTAINER{
+        flex: 0 0 1.5rem;
+        aspect-ratio: 1;
+    }
+    .weather_locations_search--RESULTS-LIST .weather_locations_search--LIST-ITEM .weather_locations_search_results--ITEM-ICON-CONTAINER img{
+        width:100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+
+/* -------------------------------------------------------- */
+
+.weather_location_recentLocations--BLOCK .weather_location_recentLocations--HEADER{
+    display: inline-block;
+    color: var(--main-white-color);
+    margin-block: 2rem;
+    font-weight: 500;
+}
+.weather_location_recentLocations--BLOCK .recent_locations--CONTAINER-CONTENT{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1.5rem;
+}
+
+@media only screen and (max-width: 650px){
+    .weather_location_recentLocations--BLOCK .recent_locations--CONTAINER-CONTENT{
+        overflow-x: scroll;
+        padding-block: 1.5rem;
+    }
+}
+
+.recent_locations--CONTAINER-CONTENT .recent_location--CARD{
+    width: 100%;
+    padding: clamp(1rem, calc(0.3rem + 1.5vw), 3rem) clamp(1.5rem, calc(0.9rem + 1.4vw), 3.5rem);
+    background-color: rgba(0,0,0, .3);
+    border-radius: .7rem;
+    backdrop-filter: blur(.3rem);
+}
+
+@media only screen and (max-width: 650px) {
+    .recent_locations--CONTAINER-CONTENT .recent_location--CARD .recent_location_card--CONTENT {
+        display: flex;
+        column-gap: 2.5rem;
+        align-items: center;
+    }
+}
+
+.recent_locations--CONTAINER-CONTENT .recent_location--CARD .recent_location_card--HEADER{
+    margin-bottom:1rem;
+}
+
+@media only screen and (max-width: 650px) {
+    .recent_locations--CONTAINER-CONTENT .recent_location--CARD .recent_location_card--HEADER {
+        margin: 0;
+    }
+}
+
+.recent_locations--CONTAINER-CONTENT .recent_location--CARD .recent_location_card--HEADER h6,
+.recent_locations--CONTAINER-CONTENT .recent_location--CARD .recent_location_card--HEADER h5{
+    text-transform: capitalize;
+    color:var(--main-white-color);
+}
+
+.recent_locations--CONTAINER-CONTENT .recent_location--CARD .recent_location_card--HEADER h6{
+    font-weight: 400;
+}
+.recent_locations--CONTAINER-CONTENT .recent_location--CARD .recent_location_temperature--EL{
+    color: var(--main-white-color);
+}
+.recent_locations--CONTAINER-CONTENT .recent_location--CARD .temperature_unit--EL{
+    background: none;
+    font-weight: 600;
+    opacity: .7;
+    color: var(--main-light-color);
+}
+
+/* ----------------------------------------- */
+
+
+/*--------- WEATHER RADAR ----------*/
+main{
+    display: grid;
+    row-gap: 3rem;
+}
+
+    /* --------------------- WEATHER MAP/RADAR SECTION ------------------------- */
+        .current_location_weather_forecast--SECTION{
+            width: auto;
+            min-width: 100%;
+        }
+
+        .current_location_weather_forecast--SECTION .currentLocation_weatherForecast--CONTENT{
+            display: flex;
+            overflow-x: scroll;
+        }
+
+        .current_location_weather_forecast--SECTION .currentLocation_weatherForecast--CONTENT .currentLocation_weatherForecast--COLUMN{
+            flex: 0 0 clamp(6rem, calc(4.5rem + 3.1vw), 10rem);
+            border-right: 1px solid var(--main-light-color);
+        }
+        
+        .currentLocation_weatherForecast--CONTENT .currentLocation_weatherForecast--COLUMN .currentLocation_weatherForecast--COLUMN-CONTENT{
+            display: grid;
+            row-gap: 4rem;
+            background-color: #fff;
+            padding:clamp(.95rem, calc(0.5rem + 0.63vw), 1.35rem);
+        }
+
+        .currentLocation_weatherForecast--COLUMN-CONTENT .currentLocation_weatherForecast--COLUMN-HEADER{
+            display: grid;
+            row-gap: 2rem;
+        }
+
+        .currentLocation_weatherForecast--COLUMN-CONTENT .currentLocation_weatherForecast--COLUMN-HEADER .currentLocation_weatherForecast--TIME-DATE--CONTAINER{
+            text-align: center;
+        }
+
+        .currentLocation_weatherForecast--COLUMN-CONTENT .currentLocation_weatherForecast--COLUMN-HEADER .currentLocation_weatherForecast--TIME-DATE--CONTAINER span{
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .currentLocation_weatherForecast--COLUMN-CONTENT .currentLocation_weatherForecast--COLUMN-HEADER .currentLocation_weatherForecast--ICON-TEMP--CONTAINER{
+            text-align: center;
+        }
+        .currentLocation_weatherForecast--COLUMN-HEADER .currentLocation_weatherForecast--ICON-TEMP--CONTAINER .currentLocation_weatherForecast--ICON-WRAPPER img{
+            width: 100%;
+        }
+
+        .currentLocation_weatherForecast--COLUMN-FOOTER .currentLocation_weatherForecast--WEATHER-DETAILS-BLOCK{
+            display: grid;
+            row-gap: 1.5rem;
+        }
+
+        .currentLocation_weatherForecast--WEATHER-DETAIL-CONTENT{
+            display: grid;
+            justify-items: center;
+        }
+
+        .wind_direction--EL{
+            position: relative;
+            width: 55%;
+            aspect-ratio: 1;
+            border-radius: 50rem;
+            border: 1px solid #000;
+            margin-block-start: 1rem;
+        }
+        
+        .wind_direction--EL .wind_direcion--ICON{
+            content: url("/assets/icons/top-arrow.png");
+            width: 55%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate:-50% -50% ;
+            transform-origin: center;
+            transform: rotate(0deg);
+            aspect-ratio: 1;
+            text-align: center;
+        }
+
+        .currentLocation_weatherForecast--WEATHER-DETAIL-CONTENT .currentLocation_weatherForecast--WEATHER-DETAIL-ICON-WRAPPER{
+            width: 55%;
+        }
+        
+        .currentLocation_weatherForecast--WEATHER-DETAIL-CONTENT .currentLocation_weatherForecast--WEATHER-DETAIL-ICON-WRAPPER img{
+            width: 100%;
+        }
+
+        .currentLocation_weatherForecast--WEATHER-DETAIL-CONTENT .currentLocation_weatherForecast--WEATHER-DETAIL-EL{
+            text-transform: capitalize;
+        }
+    /* ---------------------------------------------------------------------------- */
+
+.section--CONTENT{
+    /* padding:2rem; */
+    background-color:var(--main-light-color);
+}
+
+.section--CONTENT h2{
+    padding-bottom: clamp(1.5rem, calc(0.3rem + 1.1vw), 2.5rem);
+}
+    /* --------------------- WEATHER MAP/RADAR SECTION ------------------------- */
+        .current_location_weather_map--SECTION .section--BODY{
+            width: 100%;
+        }
+    /* ---------------------------------------------------------------------------- */
+
+
+    /* --------------------- WEATHER NEWS SECTION ------------------------- */
+        .weather_news--SECTION .weather_news--CONTAINER{
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            column-gap: 1.5rem;
+        }
+        
+        .weather_news--SECTION .weather_news--CONTAINER .weather_news--CARD{
+            width:100%;
+            background-color: var(--main-white-color);
+            border-radius: .6rem;
+            overflow: hidden;
+        }
+        .weather_news--CARD .weather_news--CARD-CONTENT{
+            width:100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .weather_news--CARD .weather_news--CARD-CONTENT .weather_news_thumbnail--CONTAINER{
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+        .weather_news--CARD .weather_news--CARD-CONTENT .weather_news_thumbnail--CONTAINER img{
+            display: block;
+            width: 100%;
+            height:100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .weather_news--CARD .weather_news--CARD-CONTENT .weather_news--TYPOS-CONTAINER{
+            padding: 1.3rem;
+            color:var(--main-dark-color);
+            flex: 0 1 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .weather_news--CARD .weather_news--CARD-CONTENT .weather_news--TYPOS-CONTAINER h3{
+            margin-bottom:1rem;
+        }
+        
+        .weather_news--CARD .weather_news--CARD-CONTENT .weather_news--TYPOS-CONTAINER h3{
+            margin-bottom:1rem;
+        }
+    /* ---------------------------------------------------------------------------- */
+
+/* ----------------------------------------- */

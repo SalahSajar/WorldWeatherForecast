@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;400;500;600;700&display=swap');
+@import "vars.css";
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+html{
+    font-size:62.5%;
+    scroll-behavior: smooth;
+}
+
+img{
+    display: block;
+}
+
+span,
+a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+mark{
+    background: none;
+}
+
+.main_sections_spacing{
+    padding: clamp(1.2rem, calc(0.4rem + 2vw), 5rem);
+}
+.secondary_sections_spacing{
+    padding: 1.5rem;
+}
+
+.main_forecast_spacing{
+    padding: clamp(1.2rem, calc(0.67rem + 0.7vw), 2rem) clamp(1rem, calc(0.1rem + 2.5vw), 6.5rem);
+}
+.secondary_forecast_spacing{
+    padding: clamp(1rem, calc(0.1rem + 1.6vw), 5rem);
+}
+
+/* font sizes global classes */
+.xxxlg__fontSize{
+    font-size:clamp(4rem, calc(3rem + 2.6vw), 8rem);
+}
+.xxlg__fontSize{
+    font-size:clamp(3rem, calc(2.8rem + 1.4vw), 5.5rem);
+}
+.xlg__fontSize{
+    font-size:2.1rem;
+}
+.lg__fontSize{
+    /* font-size:1.8rem; */
+    font-size:clamp(1.6rem, calc(0.4rem + 1.18vw), 2.7rem);
+}
+.md__fontSize{
+    /* font-size: 1.4rem; */
+    font-size: clamp(1.2rem, calc(0.3rem + 0.93vw), 2rem);
+}
+.sm__fontSize{
+    /* font-size: 1.1rem; */
+    font-size: clamp(.9rem, calc(0.17rem + 0.78vw), 1.6rem);
+}
+.xsm__fontSize{
+    font-size: .8rem;
+}
+
+/* ----------------------------------- */
+
+.page--FOOTER{
+    background-color: var(--main-light-color);
+}
+
+.windy_weatherForecast_radar--BLOCK{
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+@media only screen and (max-width: 450px) {
+    .windy_weatherForecast_radar--BLOCK {
+        width: 100%;
+        aspect-ratio: 3/4;
+    }
+}

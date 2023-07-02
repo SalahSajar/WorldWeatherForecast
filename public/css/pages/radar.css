@@ -1,0 +1,93 @@
+@import "/css/vars.css";
+
+.simpleHeader_navbar--EL .simpleHeader_navbar--CONTENT {
+    background-color: var(--main-brown-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 500px){
+    .simpleHeader_navbar--EL .simpleHeader_navbar--CONTENT {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+.simpleHeader_navbar--EL .simpleHeader_navbar--CONTENT h1 {
+    flex: 0 0 clamp(10rem, calc(2rem + 9vw), 20rem);
+}
+
+@media only screen and (max-width: 500px) {
+    .simpleHeader_navbar--EL .simpleHeader_navbar--CONTENT h1 {
+        flex: unset;
+    }
+}
+
+.simpleHeader_navbar--EL .simpleHeader_navbar--CONTENT h1 a {
+    display: block;
+    aspect-ratio: 16/7;
+    width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+    .simpleHeader_navbar--EL .simpleHeader_navbar--CONTENT h1 a {
+        aspect-ratio: 16/2;
+    }
+}
+
+.simpleHeader_navbar--CONTENT h1 a img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    filter: invert(1);
+}
+
+.simpleHeader_navbar--CONTENT .simpleHeader_navbar_links--LIST {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media only screen and (max-width: 500px) {
+    .simpleHeader_navbar--CONTENT .simpleHeader_navbar_links--LIST {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+.simpleHeader_navbar--CONTENT .simpleHeader_navbar_links--LIST a {
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: .5rem 1rem;
+    transition: color .1s ease-in-out;
+    color: var(--main-white-color);
+}
+
+@media only screen and (max-width: 500px) {
+    .simpleHeader_navbar--CONTENT .simpleHeader_navbar_links--LIST a {
+        padding-inline: 0;
+    }
+}
+
+.simpleHeader_navbar--CONTENT .simpleHeader_navbar_links--LIST a:hover {
+    color: var(--main-light-color);
+}
+
+
+.weatherRadar--CONTENT{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.weatherRadar--CONTENT .weatherRadar--CONTAINER{
+    flex: 1 1 100%;
+}
+.weatherRadar--CONTENT .weatherRadar--CONTAINER #windy{
+    height: 100% !important;
+    aspect-ratio: unset;
+}

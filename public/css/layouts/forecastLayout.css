@@ -1,0 +1,481 @@
+@import "/css/vars.css";
+
+/*******************Forecast Page Header Styles Section *******************/
+    .weatherForecast_header--CONTENT .weatherForecast_header--UPPER-PART-BLOCK {
+        background-color: var(--main-brown-color);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 5rem;
+    }
+    
+    @media only screen and (max-width: 500px){
+        .weatherForecast_header--CONTENT .weatherForecast_header--UPPER-PART-BLOCK {
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 1.5rem;
+        }
+    }
+
+    .weatherForecast_header--CONTENT .weatherForecast_header--UPPER-PART-BLOCK h1 {
+        flex: 0 0 13rem;
+    }
+
+    @media only screen and (max-width: 500px) {
+        .weatherForecast_header--CONTENT .weatherForecast_header--UPPER-PART-BLOCK h1 {
+            flex:unset;
+            width: 50%;
+        }
+    }
+
+    .weatherForecast_header--CONTENT .weatherForecast_header--UPPER-PART-BLOCK h1 a {
+        width: 100%;
+    }
+
+    .weatherForecast_header--CONTENT .weatherForecast_header--UPPER-PART-BLOCK h1 a img {
+        filter: invert(1);
+        width: 100%;
+    }
+
+    /* Forecast navbar search Block */
+        .weather_location_search--BLOCK {
+            background-color: var(--main-white-color);
+            border-radius: .5rem;
+            flex: 0 1 45rem;
+        }
+
+        @media only screen and (max-width: 500px) {
+            .weather_location_search--BLOCK {
+                flex: unset;
+                width: 100%;
+            }
+        }
+
+        .weather_location_search--BLOCK .weather_location_search--CONTENT {
+            position: relative;
+            padding: .8rem;
+            z-index: 1;
+        }
+
+        .weather_location_search--CONTENT .weather_location_search_input--BLOCK {
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+        }
+
+        .weather_location_search--CONTENT .weather_location_search_input--BLOCK .weather_location_search_input--ICON-WRAPPER {
+            flex: 0 0 3rem;
+            aspect-ratio: 1;
+        }
+
+        .weather_location_search--CONTENT .weather_location_search_input--BLOCK .weather_location_search_input--ICON-WRAPPER img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .weather_location_search--CONTENT .weather_location_search_input--BLOCK .weather_location_search--INPUT {
+            flex: 0 1 100%;
+            border: none;
+            outline: none;
+            background: none;
+        }
+
+        .weather_location_search--CONTENT .weather_location_search_input--BLOCK .weather_location_search--INPUT::placeholder {
+            font-weight: 300;
+        }
+
+        /* LOCATIONS SEARCH DROPDOWN */
+            .weather_location_search--BLOCK .weather_location_search--CONTENT .weather_locations_search--DROPDOWN-BLOCK {
+                position: absolute;
+                bottom: 0;
+                transform: translateY(100%);
+                right: 0;
+                left: 0;
+                background-color: #fff;
+                border-radius: .5rem;
+                overflow: hidden;
+                box-shadow: 0 0 1rem -0.3rem rgb(0 0 0 / 50%);
+                visibility: hidden;
+            }
+
+            .weather_location_search--CONTENT .weather_locations_search--DROPDOWN-BLOCK[data-visible="true"] {
+                visibility: visible;
+            }
+
+            .weather_locations_search--DROPDOWN-BLOCK .weather_locations_search--DROPDOWN-BLOCK-CONTENT[data-searchresultsblockisvisible="true"] .default_currentANDrecent_locations--BLOCK{
+                display: none;
+                visibility: hidden;
+            }
+
+            .weather_locations_search--DROPDOWN-BLOCK .weather_locations_search--DROPDOWN-BLOCK-CONTENT[data-searchresultsblockisvisible="true"] .locations_search--RESULTS-BLOCK{
+                display: block;
+                visibility: visible;
+            }
+
+            .weather_locations_search--DROPDOWN-BLOCK .weather_locations_search--RESULTS-LIST {
+                list-style: none;
+            }
+
+            
+            /* Locations search result items block */
+                /* Default Current and Recent List Block */
+                    .default_currentANDrecent_locations--BLOCK .default_currentANDrecent_locations--RESULTS-LIST .default_current_location--RESULT-ITEM{
+                        padding: 1.5rem 2.5rem;
+                    }
+
+                    .default_currentANDrecent_locations--BLOCK .default_currentANDrecent_locations--RESULTS-LIST .default_current_location--RESULT-ITEM{
+                        background-color: var(--main-light-color);
+                    }
+
+                    .default_currentANDrecent_locations--BLOCK .default_currentANDrecent_locations--RESULTS-LIST .default_current_location--RESULT-ITEM .default_current_location--RESULT-ITEM-HEADER-EL{
+                        display: block;
+                        font-weight: 400;
+                        letter-spacing: .1rem;
+                        margin-bottom: .5rem;
+                        pointer-events: none;
+                    }
+
+                    .default_currentANDrecent_locations--RESULTS-LIST .recent_viewed_locations--LIST-CONTAINER .recent_viewed_locations--LIST-HEADER{
+                        border-bottom: 1px solid var(--main-light-color);
+                        letter-spacing: .1rem;
+                    }
+                    
+                    .default_currentANDrecent_locations--RESULTS-LIST .recent_viewed_locations--LIST-CONTAINER .recent_viewed_location--ITEM:not(:last-of-type) .currentANDrecentLocations--ITEM-LINK{
+                        border-bottom: 1px solid var(--main-light-color);
+                    }
+
+                    .default_currentANDrecent_locations--RESULTS-LIST .recent_viewed_locations--LIST-CONTAINER .recent_viewed_locations--LIST-HEADER,
+                    .default_currentANDrecent_locations--RESULTS-LIST .recent_viewed_locations--LIST-CONTAINER .recent_viewed_location--ITEM .currentANDrecentLocations--ITEM-LINK{
+                        padding: 1.5rem 2.5rem;
+                    }
+
+                    .default_currentANDrecent_locations--RESULTS-LIST .currentANDrecentLocations--ITEM-LINK{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        color: var(--main-dark-color);
+                    }
+
+                    .default_currentANDrecent_locations--RESULTS-LIST .currentANDrecentLocations--ITEM-LINK:hover h5{
+                        color: var(--secondary-red-color);
+                    }
+
+                    .default_currentANDrecent_locations--RESULTS-LIST .currentANDrecentLocations--ITEM-LINK h5,
+                    .default_currentANDrecent_locations--RESULTS-LIST .currentANDrecentLocations--ITEM-LINK h6{
+                        text-transform: capitalize;
+                    }
+
+                    .default_currentANDrecent_locations--RESULTS-LIST .currentANDrecentLocations--ITEM-LINK h5{
+                        font-weight: 500;
+                    }
+
+                    .default_currentANDrecent_locations--RESULTS-LIST .currentANDrecentLocations--ITEM-LINK h6{
+                        font-weight: 400;
+                        color: var(--secondary-dark-color);
+                    }
+
+                    .currentANDrecentLocations--ITEM-RIGHTSIDE-BLOCK .currentANDrecentLocations--ITEM-ICON-WRAPPER{
+                        width: 3.5rem;
+                        aspect-ratio: 1;
+                    }
+
+                    .currentANDrecentLocations--ITEM-RIGHTSIDE-BLOCK .currentANDrecentLocations--ITEM-ICON-WRAPPER img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+
+                    .currentANDrecentLocations--ITEM-RIGHTSIDE-BLOCK{
+                        display: flex;
+                        align-items: center;
+                        column-gap: 1rem;
+                    }
+
+                    .currentANDrecentLocations--ITEM-RIGHTSIDE-BLOCK .currentANDrecentLocations--ITEM-TEMP-EL{
+                        font-weight: 700;
+                    } 
+                /* ---------------------------------------- */
+                
+                /* Location Search Results Block */
+                    .locations_search--RESULTS-BLOCK{
+                        display: none;
+                        visibility: hidden;
+                    }
+                    .locations_search--RESULTS-BLOCK .locations_search--RESULTS-BLOCK .weather_locations_search--RESULTS-LIST {
+                        list-style: none;
+                    }
+                    
+                    .locations_search--RESULTS-BLOCK .weather_locations_search--RESULTS-LIST .weather_locations_search--LIST-ITEM.weather_locations_search--LIST-HEADER {
+                        background-color: var(--main-light-color);
+                    }
+
+                    .locations_search--RESULTS-BLOCK .weather_locations_search--RESULTS-LIST .weather_locations_search--LIST-ITEM {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 1rem;
+                        padding: 1.5rem 2.5rem;
+                        color: var(--main-dark-color);
+                        text-transform: capitalize;
+                        transition: background .2s ease-in-out;
+                        border-bottom: 1px solid var(--main-light-color);
+                    }
+
+                    .locations_search--RESULTS-BLOCK .weather_locations_search--RESULTS-LIST .weather_locations_search--LIST-ITEM:hover {
+                        color: var(--main-red-color);
+                    }
+
+                    .locations_search--RESULTS-BLOCK .weather_locations_search--RESULTS-LIST .weather_locations_search--LIST-ITEM.weather_locations_search--LIST-HEADER,
+                    .locations_search--RESULTS-BLOCK .weather_locations_search--RESULTS-LIST li:last-of-type .weather_locations_search--LIST-ITEM{
+                        border: none;
+                    }
+
+                    .locations_search--RESULTS-BLOCK .weather_locations_search--RESULTS-LIST .weather_locations_search--LIST-ITEM .weather_locations_search_results--ITEM-ICON-CONTAINER {
+                        flex: 0 0 1.5rem;
+                        aspect-ratio: 1;
+                    }
+
+                    .locations_search--RESULTS-BLOCK .weather_locations_search--RESULTS-LIST .weather_locations_search--LIST-ITEM .weather_locations_search_results--ITEM-ICON-CONTAINER img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        object-position: center;
+                    }
+                /* ---------------------------------------- */
+
+            /* ------------------------------------------------ */
+
+        /* --------------------------------------------- */
+
+    /* ------------------------------------------------- */
+
+
+    .weatherForecast_header--LOWER-PART-BLOCK .weatherForecast_header--FORECAST-TYPES-LIST {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 5rem;
+        list-style: none;
+        text-transform: capitalize;
+    }
+
+    .weatherForecast_header--LOWER-PART-BLOCK .weatherForecast_header--FORECAST-TYPES-LIST li a {
+        color: var(--secondary-dark-color);
+        padding: .5rem 1rem;
+    }
+
+    .weatherForecast_header--LOWER-PART-BLOCK .weatherForecast_header--FORECAST-TYPES-LIST li a:hover {
+        color: var(--main-dark-color);
+    }
+/*------------------------------------------------------------------------*/
+
+/********************************** Weather Forecast Sections Container **************************************/
+    .location_weather_forecast--BLOCK .location_weather_forecast--CONTENT {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+/*------------------------------------------------------------------------*/
+
+/********************************** Weather Forecast Sections Container **************************************/
+.location_weatherForecast--SECTION {
+    border-radius: .3rem;
+    background-color: var(--main-light-color);
+}
+
+.location_weatherForecast--SECTION .location_weatherForecast--SECTION-CONTENT .location_weatherForecast--HEADER {
+    margin-bottom: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/*------------------------------------------------------------------------*/
+
+/* Hourly and Daily Weather Forecasts Styles Section */
+
+.location_weatherForecast--SECTION {
+    height: fit-content;
+}
+
+.location_weatherForecast--SECTION[data-expanded="true"] .location_weatherForecast--DROPDOWN-ICON-CONTAINER {
+    transform: rotate(180deg);
+}
+
+.location_weatherForecast--SECTION[data-expanded="true"] .location_weatherForecast--BODY {
+    max-height: 35rem;
+    padding-top: 3rem;
+}
+
+
+
+.location_weatherForecast--SECTION .location_weatherForecast--HEADER {
+    cursor: pointer;
+}
+
+.location_weatherForecast--HEADER .location_weatherForecast_header--CONTENT {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.location_weatherForecast--HEADER .location_weatherForecast_header--CONTENT.location_hourlyWeatherForecast_header--CONTENT .location_hourlyWeatherForecast--HOUR-EL{
+    text-transform: uppercase;
+}
+
+.location_weatherForecast--HEADER .location_weatherForecast_header--CONTENT.location_dailyWeatherForecast_header--CONTENT .location_weatherForecast--DATE-BLOCK {
+    text-align: center;
+}
+
+.location_weatherForecast_header--CONTENT.location_dailyWeatherForecast_header--CONTENT .location_weatherForecast--DATE-BLOCK .location_weatherForecast--DAY-EL{
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .2rem;
+}
+
+.location_weatherForecast_header--CONTENT.location_dailyWeatherForecast_header--CONTENT .location_weatherForecast--DATE-BLOCK .location_dailyWeatherForecast--HOUR-EL{
+    color: var(--secondary-dark-color);
+}
+
+.location_weatherForecast--HEADER .location_weatherForecast_header--CONTENT .location_weatherForecast--HOUR-EL {
+    text-transform: uppercase;
+}
+
+.location_weatherForecast--HEADER .location_weatherForecast_header--CONTENT .location_weatherForecast--TEMP-INFOS-BLOCK {
+    text-align: center;
+}
+
+.location_weatherForecast--TEMP-INFOS-BLOCK .location_weatherForecast--TEMP-INFOS-MAIN-BLOCK {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1rem;
+}
+
+.location_weatherForecast--TEMP-INFOS-BLOCK .location_weatherForecast--TEMPERATURE-FEELSLIKE-EL{
+    text-transform: capitalize;
+}
+
+.location_weatherForecast--TEMP-INFOS-BLOCK .location_weatherForecast--TEMP-INFOS-MAIN-BLOCK .location_weatherForecast--TEMPERATURE {
+    line-height: .9;
+    position: relative;
+}
+
+.location_weatherForecast--TEMP-INFOS-MAIN-BLOCK .location_weatherForecast--TEMPERATURE.location_hourlyWeatherForecast--TEMPERATURE::after {
+    content: "C";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: clamp(1.7rem, calc(1rem + 0.9vw), 2.3rem);
+    color: var(--secondary-dark-color);
+}
+.location_weatherForecast--TEMP-INFOS-MAIN-BLOCK .location_weatherForecast--TEMPERATURE.location_dailyWeatherForecast--TEMPERATURE .location_weatherForecast--MIN-TEMPERATURE{
+    color: var(--secondary-dark-color);
+}
+
+
+.location_weatherForecast--RIGHT-BLOCK .location_weatherForecast_leftBlock--CONTENT {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    column-gap: .5rem;
+}
+
+
+.location_weatherForecast_leftBlock--CONTENT .location_weatherForecast--WEATHERCHANCE-BLOCK {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.location_weatherForecast_leftBlock--CONTENT .location_weatherForecast--WEATHERCHANCE-BLOCK>div {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    opacity: .8;
+}
+
+.location_weatherForecast--WEATHERCHANCE-BLOCK .location_weatherForecast--WEATHERCHANCE-ICON-CONTAINER {
+    flex: 0 0 3rem;
+}
+
+.location_weatherForecast--WEATHERCHANCE-BLOCK .location_weatherForecast--WEATHERCHANCE-ICON-CONTAINER img {
+    width: 100%;
+}
+
+.location_weatherForecast--WEATHERCHANCE-BLOCK .location_weatherForecast--WEATHERCHANCE-EL {
+    font-weight: 700;
+}
+
+
+.location_weatherForecast--RIGHT-BLOCK .location_weatherForecast_leftBlock--CONTENT .location_weatherForecast--DROPDOWN-ICON-CONTAINER {
+    flex: 0 0 2rem;
+    transition: transform .4s ease-in-out;
+}
+
+.location_weatherForecast--RIGHT-BLOCK .location_weatherForecast_leftBlock--CONTENT .location_weatherForecast--DROPDOWN-ICON-CONTAINER img {
+    width: 100%;
+}
+
+/* Hourly Weather Infos List Styles Section */
+
+    .location_weatherForecast--BODY {
+        padding-top: 0;
+        overflow: hidden;
+        height: auto;
+        max-height: 0;
+        transition: max-height 0.4s ease-in-out,
+            padding-top .4s ease-in-out;
+    }
+
+    .location_weatherForecast_body--CONTENT .location_weatherForecast_infos--LIST {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 2rem;
+    }
+
+    @media only screen and (max-width: 450px) {
+        .location_weatherForecast_body--CONTENT .location_weatherForecast_infos--LIST {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            row-gap: 2rem;
+        }
+    }
+
+    .location_weatherForecast_body--CONTENT .location_weatherForecast_infos--LIST .location_weatherForecast_info--LIST-ITEM {
+        padding-block: 1.5rem;
+        border-bottom: 1px solid var(--secondary-light-color);
+    }
+
+    @media only screen and (max-width: 450px) {
+        .location_weatherForecast_body--CONTENT .location_weatherForecast_infos--LIST .location_weatherForecast_info--LIST-ITEM {
+            padding-top: 0;
+        }
+    }
+
+    .location_weatherForecast_body--CONTENT .location_weatherForecast_infos--LIST .location_weatherForecast_info--LIST-ITEM:nth-of-type(1),
+    .location_weatherForecast_body--CONTENT .location_weatherForecast_infos--LIST .location_weatherForecast_info--LIST-ITEM:nth-of-type(2) {
+        padding-top: 0;
+    }
+
+    .location_weatherForecast_body--CONTENT .location_weatherForecast_infos--LIST .location_weatherForecast_info--LIST-ITEM:nth-last-of-type(1),
+    .location_weatherForecast_body--CONTENT .location_weatherForecast_infos--LIST .location_weatherForecast_info--LIST-ITEM:nth-last-of-type(2) {
+        border: none;
+    }
+
+    @media only screen and (max-width: 450px) {
+        .location_weatherForecast_body--CONTENT .location_weatherForecast_infos--LIST .location_weatherForecast_info--LIST-ITEM:nth-last-of-type(2){
+            border-bottom: 1px solid var(--secondary-light-color);
+        }
+    }
+
+    .location_weatherForecast_body--CONTENT .location_weatherForecast_infos--LIST .location_weatherForecast_info--ITEM-CONTENT {
+        display: flex;
+        justify-content: space-between;
+        text-transform: capitalize;
+    }
+
+
+/* ------------------------------------------ */
+
+/* ------------------------------------------------- */
